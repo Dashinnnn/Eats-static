@@ -1,0 +1,44 @@
+.mainNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    transition: background-color .5s ease;
+    z-index: 1000;
+
+}
+
+.mainNav.transparent {  
+    background-color: rgba(232, 201, 153, 0.3);
+    box-shadow: none;
+    color: black;
+}
+
+.mainNav.solid {
+    background-color: #E8C999;
+    box-shadow: -1px -1px 50px 1px #8E1616;
+    color: #8E1616;
+}
+
+.logo {
+    width: 125px;
+    height: auto;
+    margin: 10px 0 10px 20px;
+}
+ul {
+    display: flex;
+    gap: 50px;
+    margin: 10px 20px 10px 0;
+}
+
+li {
+    list-style-type: none;
+    font-size: 21px;
+    font-weight: bold;
+    font-family: "Mulish", sans-serif;
+    font-optical-sizing: auto;
+}
+
+

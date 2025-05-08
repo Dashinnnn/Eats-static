@@ -1,0 +1,71 @@
+.welcome-cont {
+    position: relative;
+    top: 150px;
+    left: 20%;
+    transform: translateX(-50%);
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 16px;
+    max-width: 450px;
+    width: 90%;
+    z-index: 900;
+}
+
+.welcome-content {
+    display: block;
+    align-items: center;
+  
+
+}
+
+.welcome-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.welcome-header h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    color: #666;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.close-btn:hover {
+    color: #333;
+}
+
+.welcome-text {
+    margin-top: 8px;
+    color: #555;
+    font-size: 1.5rem;
+    margin: 20px 0 20px 0;
+}
+
+.highlight{
+    color: #8E1616;
+    font-weight: bold;
+}
+
+.start-btn {
+    background-color: green;
+    padding: 10px;
+    border: none;
+    border-radius: 1rem;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.start-btn:hover {
+    background-color: #8E1616;
+    cursor: pointer;
+}
