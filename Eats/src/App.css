@@ -23,7 +23,9 @@ body {
   margin: 120px auto;
   padding: 20px auto;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .why-eats {
@@ -41,6 +43,87 @@ body {
   width: 100%;
   border: 5px dashed gray;
   border-radius: 1.5rem;
+}
+
+/* Container for the food cards section */
+.food-cards-container {
+  padding: 2rem; /* Equivalent to Tailwind's p-8 */
+}
+
+/* Title styling */
+.food-cards-title {
+  font-size: 1.875rem; /* Equivalent to text-3xl */
+  font-weight: 700; /* Equivalent to font-bold */
+  text-align: center;
+  margin-bottom: 2rem; /* Equivalent to mb-8 */
+}
+
+/* Responsive grid for food cards */
+.food-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* 1 column by default */
+  gap: 1.5rem; /* Equivalent to gap-6 */
+  justify-items: center; /* Center items */
+}
+
+/* Responsive breakpoints */
+@media (min-width: 640px) {
+  .food-cards-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for sm screens */
+  }
+}
+
+@media (min-width: 1024px) {
+  .food-cards-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for lg screens */
+  }
+}
+
+/* Food card styling */
+.food-card {
+  position: relative;
+  background-color: white;
+  border-radius: 0.5rem; /* Equivalent to rounded-lg */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Equivalent to shadow-lg */
+  overflow: hidden;
+  transition: all 0.3s ease; /* Equivalent to transition-all duration-300 */
+  width: 16rem; /* Equivalent to w-64 (64 * 0.25rem = 16rem) */
+  height: 16rem; /* Equivalent to h-64 */
+}
+
+/* Hovered state for food card */
+.food-card-hovered {
+  width: 20rem; /* Equivalent to w-80 */
+  height: auto; /* Equivalent to h-auto */
+}
+
+/* Image styling */
+.food-card-img {
+  width: 100%;
+  height: 16rem; /* Equivalent to h-64 */
+  object-fit: cover; /* Equivalent to object-cover */
+}
+
+/* Description container */
+.food-card-desc {
+  padding: 1rem; /* Equivalent to p-4 */
+  background-color: #f9fafb; /* Equivalent to bg-gray-50 */
+  opacity: 0; /* Equivalent to opacity-0 */
+  height: 0; /* Equivalent to h-0 */
+  transition: opacity 0.3s ease; /* Equivalent to transition-opacity duration-300 */
+  overflow: hidden;
+}
+
+/* Visible description on hover */
+.food-card-desc-visible {
+  opacity: 1; /* Equivalent to opacity-100 */
+  height: auto; /* Allow content to expand */
+}
+
+/* Description text */
+.food-card-desc p {
+  color: #4b5563; /* Equivalent to text-gray-700 */
+  font-size: 0.875rem; /* Equivalent to text-sm */
 }
 
 
