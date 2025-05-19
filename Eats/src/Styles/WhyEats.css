@@ -1,0 +1,43 @@
+.Why-container {
+    max-width: 600px;
+    margin: 50px 100px 50px 100px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    margin-bottom: 20px;
+}
+
+.header h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #000;
+}
+
+.content {
+    margin-left: 40px;
+}
+
+.content ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.content li {
+    font-size: 1rem;
+    color: #555;
+}
+
+.content li:last-child {
+    margin-bottom: 0;
+}
+
+.content i {
+    margin-right: 20px;
+}

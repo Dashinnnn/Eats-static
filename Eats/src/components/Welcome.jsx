@@ -27,7 +27,6 @@ export default function Welcome () {
                                 Get Started!
                             </button>
                         </div>    
-                    
                 </div>
             </div>
         </>

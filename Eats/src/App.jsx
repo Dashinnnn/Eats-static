@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar'
 import ImageSlider from './components/ImageSlider'
 import Welcome from './components/Welcome'
+import WhyEats from './components/WhyEats'
 import './App.css'
 
 //Imported images for img slider
@@ -25,12 +26,22 @@ function App() {
       </div>
       
       <Welcome />
-      <div className="bg-border">
-        <hr />
-      </div>
+      <div className="bg-border"></div>
 
       <div className="eats-main-content">
+        <div className='whyEats-white-bg'>
+          <div className="dashes">
+          <div className="why-eats">
+            <WhyEats />
+          </div>
+          </div>
+        </div>
+
+        
+
       </div>
+
+
     </>
   )
 }
