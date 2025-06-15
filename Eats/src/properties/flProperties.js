@@ -5,6 +5,7 @@ import sinigang from '../assets/flFood/sinigang.jpg'
 export default  [
     {
         id: 1, 
+        dishName: "Chicken Adobo",
         img: {
             src: chickenAdobo,
             alt: "An image of chicken adobo",
@@ -13,6 +14,7 @@ export default  [
     },
     {
         id: 2,
+        dishName: "Kare-kare",
         img: {
             src: karekare,
             alt: "An image of kare-kare"
@@ -21,6 +23,7 @@ export default  [
     },
     {
         id: 3,
+        dishName: "Sinigang",
         img: {
             src: sinigang,
             alt: "An image of sinigang"

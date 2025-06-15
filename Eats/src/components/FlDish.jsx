@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function FlDish({ img, desc }) {
+export default function FlDish({ img, dishName, desc }) {
   const [isHovered, setIsHovered] = useState(false)
 
   return (
@@ -15,6 +15,7 @@ export default function FlDish({ img, desc }) {
         className="food-card-img" 
       />
       <div className={`food-card-desc ${isHovered ? 'food-card-desc-visible' : ''}`}>
+        <h3>{dishName}</h3>
         <p>{desc}</p>
       </div>
     </div>

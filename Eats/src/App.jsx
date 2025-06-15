@@ -3,7 +3,9 @@ import Navbar from './components/Navbar'
 import ImageSlider from './components/ImageSlider'
 import Welcome from './components/Welcome'
 import WhyEats from './components/WhyEats'
-import FlDish from './components/flDish'
+import FlDish from './components/FlDish'
+import ItlDish from './components/itlDish'
+import ChDish from './components/chDish'
 import './App.css'
 
 //Imported images for img slider
@@ -14,6 +16,9 @@ import slide4 from './assets/slide4.jpg'
 
 //Imported files for dish contents
 import flFood from './properties/flProperties'
+import itlFood from './properties/itlProperties'
+import chFood from './properties/chProperteis'
+
 
 const arrImg = [slide1, slide2, slide3, slide4];
 
@@ -44,6 +49,35 @@ function App() {
             {flFood.map((dish) => (
               <FlDish
                 key={dish.id}
+                dishName={dish.dishName}
+                img={dish.img}
+                desc={dish.desc}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className="food-cards-container">
+          <h2 className="food-cards-title">Italian Dish</h2>
+          <div className="food-cards-grid">
+            {itlFood.map((dish) => (
+              <ItlDish
+                key={dish.id}
+                dishName={dish.dishName}
+                img={dish.img}
+                desc={dish.desc}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className="food-cards-container">
+          <h2 className="food-cards-title">Chinese Dish</h2>
+          <div className="food-cards-grid">
+            {chFood.map((dish) => (
+              <ChDish
+                key={dish.id}
+                dishName={dish.dishName}
                 img={dish.img}
                 desc={dish.desc}
               />
