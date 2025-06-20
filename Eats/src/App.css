@@ -47,7 +47,6 @@ body {
 
 .food-cards-container {
   margin-top: 1rem;
-  margin-bottom: 1rem;
   padding: 2rem; 
 }
 
@@ -93,34 +92,41 @@ body {
 
 .food-card-hovered {
   width: 20rem; 
-  height: auto; 
+  height: 16rem; 
 }
 
 .food-card-img {
   width: 100%;
   height: 16rem; 
+  transition: opacity 0.3s ease-out .2s;
   object-fit: cover; 
+}
+
+.food-card-img-opacity{
+  opacity: 0.3;
 }
 
 
 .food-card-desc {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   padding: 1rem; 
-  background-color: #f9fafb; 
-  opacity: 0; 
-  height: 0; 
+  opacity: 0;  
   transition: opacity 0.3s ease; 
-  overflow: hidden;
+  z-index: 1001;
 }
 
 
 .food-card-desc-visible {
   opacity: 1; 
-  height: auto; 
 }
 
 .food-card-desc p {
-  color: #4b5563; 
-  font-size: 0.875rem; 
+  color: #000000; 
+  font-size: 0.900rem; 
+  font-weight: 600;
 }
 
 

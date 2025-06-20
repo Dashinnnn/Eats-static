@@ -12,7 +12,7 @@ export default function FlDish({ img, dishName, desc }) {
       <img 
         src={img.src} 
         alt={img.alt}
-        className="food-card-img" 
+        className={`food-card-img ${isHovered ? 'food-card-img-opacity' : ''} `} 
       />
       <div className={`food-card-desc ${isHovered ? 'food-card-desc-visible' : ''}`}>
         <h3>{dishName}</h3>
