@@ -18,7 +18,6 @@ body {
   border-top: 1.5px solid black;
 }
 
-
 .eats-main-content {
   margin: 120px auto;
   padding: 20px auto;
@@ -29,7 +28,7 @@ body {
 }
 
 .why-eats {
-  margin:  50px 100px;
+  margin: 50px 100px;
 }
 
 .whyEats-white-bg {
@@ -47,90 +46,101 @@ body {
 
 .food-cards-container {
   margin-top: 1rem;
-  padding: 2rem; 
+  padding: 2rem;
 }
-
 
 .food-cards-title {
-  font-size: 1.875rem; 
-  font-weight: 700; 
+  font-size: 1.875rem;
+  font-weight: 700;
   text-align: center;
-  margin-bottom: 2rem; 
+  margin-bottom: 2rem;
 }
 
+.food-cards-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.nav-button {
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: #555;
+}
+
+.food-cards-slider {
+  overflow: hidden; /* Hide cards outside the visible area */
+}
 
 .food-cards-grid {
-  display: grid;
-  grid-template-columns: 1fr; 
-  gap: 1.5rem; 
-  justify-items: center; 
-}
-
-@media (min-width: 640px) {
-  .food-cards-grid {
-    grid-template-columns: repeat(2, 1fr); 
-  }
-}
-
-@media (min-width: 1024px) {
-  .food-cards-grid {
-    grid-template-columns: repeat(3, 1fr); 
-  }
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  width: fit-content; /* Allow the container to fit all cards */
+  transition: transform 0.5s ease-in-out; /* Smooth sliding transition */
 }
 
 .food-card {
   position: relative;
   background-color: white;
-  border-radius: 0.5rem; 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  transition: all 0.3s ease; 
-  width: 16rem; 
-  height: 16rem; 
+  transition: all 0.3s ease;
+  width: 16rem;
+  height: 16rem;
+  flex-shrink: 0; /* Prevent cards from shrinking */
 }
 
-
-.food-card-hovered {
-  width: 20rem; 
-  height: 16rem; 
+.food-card-hovered,
+.food-card-highlighted {
+  width: 20rem;
+  height: 16rem;
 }
 
 .food-card-img {
   width: 100%;
-  height: 16rem; 
-  transition: opacity 0.3s ease-out .2s;
-  object-fit: cover; 
+  height: 16rem;
+  transition: opacity 0.3s ease-out 0.2s;
+  object-fit: cover;
 }
 
-.food-card-img-opacity{
+.food-card-img-opacity {
   opacity: 0.3;
 }
-
 
 .food-card-desc {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 1rem; 
-  opacity: 0;  
-  transition: opacity 0.3s ease; 
+  padding: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
   z-index: 1001;
 }
 
-
 .food-card-desc-visible {
-  opacity: 1; 
+  opacity: 1;
 }
 
 .food-card-desc p {
-  color: #000000; 
-  font-size: 0.900rem; 
+  color: #000000;
+  font-size: 0.900rem;
   font-weight: 600;
 }
-
-
-
-
-
-

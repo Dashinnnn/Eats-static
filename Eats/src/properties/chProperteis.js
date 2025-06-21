@@ -62,6 +62,6 @@ export default [
             src: xiao,
             alt: "An image of xiao long bao"
         },
-        desc: "Xiao Long Bao, also known as soup dumplings, are a type of steamed bun (baozi) originating from the Jiangnan region of China, particularly Shanghai and Wuxi. They are known for their delicate, pleated wrappers and savory soup filling, traditionally made with pork and broth that turns into a flavorful soup when steamed. "
+        desc: "Xiao Long Bao, also known as soup dumplings, are a type of steamed bun (baozi) originating from the Jiangnan region of China, particularly Shanghai and Wuxi. They are known for their delicate, pleated wrappers and savory soup filling, traditionally made with pork and broth that turns into a flavorful soup when steamed."
      }
 ]
