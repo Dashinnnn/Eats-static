@@ -8,6 +8,7 @@ import WhyEats from './components/WhyEats';
 import FlDish from './components/FlDish';
 import ItlDish from './components/itlDish';
 import ChDish from './components/chDish';
+import Footer from './components/Footer';
 import './App.css';
 
 //Imported images for img slider
@@ -22,36 +23,86 @@ import itlFood from './properties/itlProperties';
 import chFood from './properties/chProperteis';
 
 const arrImg = [slide1, slide2, slide3, slide4];
-const cardWidth = 16; // rem
-const gap = 1.5; // rem
+const cardWidth = 16; 
+const gap = 1.5; 
 const totalStep = cardWidth + gap;
-const visibleWidth = (cardWidth * 3) + (gap * 2); // Width for 3 cards + 2 gaps
+const visibleWidth = (cardWidth * 3) + (gap * 2); 
 
 function App() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [translateX, setTranslateX] = useState(0);
+  const [flCurrentIndex, setFlCurrentIndex] = useState(0);
+  const [flTranslateX, setFlTranslateX] = useState(0);
+
+  const [itlCurrentIndex, setItlCurrentIndex] = useState(0);
+  const [itlTranslateX, setItlTranslateX] = useState(0)
+
+  const [chCurrentIndex, setChCurrentIndex] = useState(0);
+  const [chTranslateX, setChTranslateX] = useState(0);
 
   const handlePrevFl = () => {
-    const newIndex = currentIndex === 0 ? flFood.length - 3 : currentIndex - 1;
-    setCurrentIndex(newIndex);
-    setTranslateX(-newIndex * totalStep);
+    const newIndex = flCurrentIndex === 0 ? flFood.length - 3 : flCurrentIndex - 1;
+    setFlCurrentIndex(newIndex);
+    setFlTranslateX(-newIndex * totalStep);
   };
 
   const handleNextFl = () => {
-    const newIndex = currentIndex >= flFood.length - 3 ? 0 : currentIndex + 1;
-    setCurrentIndex(newIndex);
-    setTranslateX(-newIndex * totalStep);
+    const newIndex = flCurrentIndex >= flFood.length - 3 ? 0 : flCurrentIndex + 1;
+    setFlCurrentIndex(newIndex);
+    setFlTranslateX(-newIndex * totalStep);
   };
 
-  const visibleCards = flFood.map((dish, index) => (
+  const handlePrevItl = () => {
+    const newIndex = itlCurrentIndex === 0 ? itlFood.length - 3 : itlCurrentIndex - 1;
+    setItlCurrentIndex(newIndex)
+    setItlTranslateX(-newIndex * totalStep)
+  };
+
+  const handleNextItl = () => {
+    const newIndex = itlCurrentIndex >= itlFood.length - 3 ? 0 : itlCurrentIndex + 1;
+    setItlCurrentIndex(newIndex)
+    setItlTranslateX(-newIndex * totalStep);
+  };
+
+  const handlePrevCh = () => {
+    const newIndex = chCurrentIndex === 0 ? chFood.length - 3 : chCurrentIndex - 1;
+    setChCurrentIndex(newIndex)
+    setChTranslateX(-newIndex * totalStep) 
+  };
+
+  const handleNextCh = () => {
+    const newIndex = chCurrentIndex >= chFood.length - 3 ? 0 : chCurrentIndex + 1;
+    setChCurrentIndex(newIndex)
+    setChTranslateX(-newIndex * totalStep);
+  }
+
+  const visibleCardsFl = flFood.map((dish, index) => (
     <FlDish
       key={dish.id}
       dishName={dish.dishName}
       img={dish.img}
       desc={dish.desc}
-      isHighlighted={currentIndex <= index && index < currentIndex + 3 && index === currentIndex + 1}
+      isHighlighted={flCurrentIndex <= index && index < flCurrentIndex + 3 && index === flCurrentIndex + 1}
     />
   ));
+
+  const visibleCardsItl = itlFood.map((dish, index) => (
+    <ItlDish
+      key={dish.id}
+      dishName={dish.dishName}
+      img={dish.img}
+      desc={dish.desc}
+      isHighlighted={itlCurrentIndex <= index && index < itlCurrentIndex + 3 && index === itlCurrentIndex + 1}
+    />
+  ));
+
+  const visibleCardsCh = chFood.map((dish, index) => (
+    <ChDish
+      key={dish.id}
+      dishName={dish.dishName}
+      img={dish.img}
+      desc={dish.desc}
+      isHighlighted={chCurrentIndex <= index && index < chCurrentIndex + 3 && index === chCurrentIndex + 1}
+    />
+  ))
 
   return (
     <>
@@ -80,8 +131,8 @@ function App() {
               ←
             </button>
             <div className="food-cards-slider" style={{ width: `${visibleWidth}rem` }}>
-              <div className="food-cards-grid" style={{ transform: `translateX(${translateX}rem)` }}>
-                {visibleCards}
+              <div className="food-cards-grid" style={{ transform: `translateX(${flTranslateX}rem)` }}>
+                {visibleCardsFl}
               </div>
             </div>
             <button className="nav-button" onClick={handleNextFl}>
@@ -92,31 +143,40 @@ function App() {
 
         <div className="food-cards-container">
           <h2 className="food-cards-title">Italian Dish</h2>
-          <div className="food-cards-grid">
-            {itlFood.map((dish) => (
-              <ItlDish
-                key={dish.id}
-                dishName={dish.dishName}
-                img={dish.img}
-                desc={dish.desc}
-              />
-            ))}
+            <div className="food-cards-nav">
+              <button className="nav-button" onClick={handlePrevItl}>
+                ←
+              </button>
+              <div className="food-cards-slider" style={{width: `${visibleWidth}rem` }}>
+                <div className="food-cards-grid" style={{ transform: `translateX(${itlTranslateX}rem)` }}>
+                  {visibleCardsItl}
+                </div>
+              </div>
+              <button className="nav-button" onClick={handleNextItl}>
+                →
+              </button>
           </div>
         </div>
 
         <div className="food-cards-container">
           <h2 className="food-cards-title">Chinese Dish</h2>
-          <div className="food-cards-grid">
-            {chFood.map((dish) => (
-              <ChDish
-                key={dish.id}
-                dishName={dish.dishName}
-                img={dish.img}
-                desc={dish.desc}
-              />
-            ))}
-          </div>
+            <div className="food-cards-nav">
+              <button className="nav-button" onClick={handlePrevCh}>
+                ←
+              </button>
+              <div className="food-cards-slider" style={{width: `${visibleWidth}rem`}}>
+                <div className="food-cards-grid" style={{transform: `translateX(${chTranslateX}rem)`}}>
+                  {visibleCardsCh}
+                </div>
+              </div>
+              <button className="nav-button" onClick={handleNextCh}>
+                →
+              </button>
+            </div>
         </div>
+      </div>
+      <div className="footer">
+        <Footer/>
       </div>
     </>
   );
