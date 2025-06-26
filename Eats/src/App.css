@@ -145,3 +145,92 @@ body {
   font-size: 0.900rem;
   font-weight: 600;
 }
+
+/* Floating Icon Styles */
+.floating-icon {
+  z-index: 1000;
+  bottom: 20px;
+  width: 55px;
+  height: 55px;
+  background-color: #8E1616;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s;
+  border: 2px solid white;
+}
+
+.floating-icon:hover {
+  background-color: #064a20;
+}
+
+.floating-icon.fixed {
+  position: fixed;
+}
+
+.floating-icon.absolute {
+  position: absolute;
+}
+
+.floating-icon.left-icon {
+  left: 20px;
+}
+
+.floating-icon.right-icon {
+  right: 20px;
+}
+
+.social-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.floating-icon.fb-icon {
+  bottom: 140px;
+}
+
+.floating-icon.ig-icon {
+  bottom: 80px;
+}
+
+.floating-icon.tw-icon {
+  bottom: 20px;
+}
+
+.floating-icon.right-icon {
+  bottom: 20px;
+}
+
+.btnCont {
+  position: relative; 
+}
+
+@media (max-width: 768px) {
+  .floating-icon {
+    width: 45px;
+    height: 45px;
+  }
+  .floating-icon.left-icon {
+    left: 15px;
+  }
+  .floating-icon.right-icon {
+    right: 15px;
+  }
+  .floating-icon.fb-icon {
+    bottom: 120px; 
+  }
+  .floating-icon.ig-icon {
+    bottom: 65px; 
+  }
+  .floating-icon.tw-icon {
+    bottom: 15px; 
+  }
+  .social-icons {
+    gap: 10px; 
+  }
+}
